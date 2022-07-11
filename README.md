@@ -1,6 +1,6 @@
-# Responsive social media template
+# Interview website
 
-##### A website template is similar to Twitter. . It employs the use of Html, CSS, Bootstrap, and Javascript to build it.
+##### A website where small businesses and people that are looking for work experience can meet and chat. We did this because other websites don't have this feature and on larger job listing websites, there is a lower chance of small businesses to stand out. Our website allows start-ups to grow.
 
 
-👉🏻 [Demo](https://shohan-ch.github.io/social-network-template/)
+
