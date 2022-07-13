@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- <div class="nav">
+        <nav>
+            <a href="index.html" target="_parent" class="logo">logo</a>
+            <a href="login.html" target="_parent" class="nav-button">Log In</a>
+            <a href="about.html" target="_parent" class="nav-button">About</a>
+        </nav>
+    </div> -->
+    <script src="location_jquery.js"></script>
+
+    <section>
+        <div class="profile">
+            <div class="profile-top">
+               <div class="profile-picture">
+                    <img src="https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg" alt="profile-pic" height="200px" width="200px" style="border: 5px solid white; border-radius: 8px;">
+                    <div class="profile-info">
+                        <h2>Full Name</h2>
+                        <h4>Username</h4>
+                    </div>
+               </div>
+            </div>
+
+            <div class="profile-bottom">
+
+                <div class="profile-menu">
+                    <a onclick="tabs(0)" class="button" id="tab active"><span>Basic Info</span></a>
+                    <a onclick="tabs(1)" class="button" id="tab"><span>Account</span></a>
+                    <a onclick="tabs(2)" class="button" id="tab"><span>Privacy</span></a>
+                    <a onclick="tabs(3)" class="button" id="tab"><span>Notifications</span></a>
+                    <a onclick="tabs(4)" class="button" id="tab"><span>Contact Us</span></a>
+                </div>
+
+                <div class="content-display">
+                    <div class="basic tabShow">
+
+                        <h1>Basic Information</h1>
+
+                        <h3>Full Name</h3>
+                        <input type="text" class="input">
+
+                        <h3>Location</h3>
+                        <div id="widget">
+                            <form>
+                                Continent: <select onchange="set_country(this,country,city_state)" size="1" name="region">
+                                    <option value="" selected> </option>
+                                    <script type="text/javascript">
+                                        setRegions(this);
+                                    </script>
+                                </select>
+                                <br>
+                                Country: <select name="country" onchange="set_city_state(this,city_state)"></select>
+                                <br>
+                                State/City: <select name="city_state" onchange="print_city_state(country,this)"></select>
+                            </form>
+
+                        </div>
+
+                        <h3>Birthday</h3>
+                        <form action="/action_page.php">
+                            <input type="date" id="birthday" name="birthday" style="color-scheme: dark;">
+                        </form>
+
+                        <h3>Summary</h3>
+                        <textarea name="Summary" cols="70" rows="5" 
+                        style="background-color: rgba(255, 255, 255, 0.2); 
+                            border-radius: 8px; 
+                            margin-top: 10px; 
+                            margin-bottom: 10px; 
+                            padding: 10px; 
+                            color: white; 
+                            font-family: 'poppins', sans-serif;
+                            transition: 0.1s ease-in-out;"></textarea>
+
+                        <h3>Website</h3>
+                        <input type="text" name="website">
+
+                        <h3>LinkedIn</h3>
+                        <input type="text" name="LinkedIn-handle">
+
+                        <h2>Experience</h2>
+
+                        <h3>Work</h3>
+                        <input type="text" name="workplace">
+
+                        <h3>Education</h3>
+                        <input type="text" name="education">
+
+                        <h3>Skills</h3>
+                        <input type="text" name="Technical Skills">
+
+                        <br><br>
+
+                        <a class="button" id="tab active"><span>Update</span></a>
+
+                    </div>
+                    
+                    <div class="account tabShow">
+                        <h1>Account Settings</h1>
+
+                        <h3>Username</h3>
+                        <input type="text" name="username">
+
+                        <h3>Email</h3>
+                        <input type="email" name="email">
+
+                        <h3>Password</h3>
+                        <input type="password" name="password">
+
+                        <br><br>
+                        
+                        <a class="button" id="tab active"><span>Update</span></a>
+
+                    </div>
+                    
+                    <div class="privacy tabShow">
+                        <h1>Privacy</h1>
+
+                        Share your profile with other users? <input type="checkbox" id="checkbox">
+
+                        <br><br><br>
+                        
+                        <a class="button" id="tab active"><span>Update</span></a>
+
+                    </div>
+
+                    <div class="notifications tabShow">
+                        <h1>Notifications</h1>
+                        Send Notifications to Email? <input type="checkbox" id="checkbox">
+
+                        <br><br><br>
+                        
+                        <a class="button" id="tab active"><span>Update</span></a>
+
+                    </div>
+
+                    <div class="contactUs tabShow">
+                        <h1>Contact Us</h1>
+                        
+                        <h3>First Name</h3>
+                        <input type="text" class="input">
+
+                        <h3>Last Name</h3>
+                        <input type="text" class="input">
+
+                        <h3>Email</h3>
+                        <input type="email" class="input">
+
+                        <h3>Message</h3>
+                        <textarea name="Summary" cols="70" rows="5" 
+                        style="background-color: rgba(255, 255, 255, 0.2); 
+                            border-radius: 8px; 
+                            margin-top: 10px; 
+                            margin-bottom: 10px; 
+                            padding: 10px; 
+                            color: white; 
+                            font-family: 'poppins', sans-serif;
+                            transition: 0.1s ease-in-out;"></textarea>
+                        
+                        <br><br><br>
+                        
+                        <a class="button" id="tab active"><span>Send Message</span></a>
+                    </div>
+
+                </div>
+                
+        </div>
+    </section>
+
+    <script>
+        const tabBtn = document.querySelectorAll(".tab")
+        const tab = document.querySelectorAll(".tabShow")
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            })
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+    
+
+</body>
+</html>
