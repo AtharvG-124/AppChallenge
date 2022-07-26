@@ -1,0 +1,242 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forms.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <!-- <div>
+        <h2>Enter your interests</h2>
+
+        <form class="add">
+            <input type="text" name="interest1" placeholder="interests">
+            <input type="text" name="interest2" placeholder="interests">
+            <input type="text" name="interest3" placeholder="interests">
+            <input type="text" name="first" placeholder="first name">
+            <input type="text" name="last" placeholder="last name">
+            <input type="text" name="location" placeholder="location">
+            <input type="text" name="username" placeholder="username">
+    
+            <button>add info</button>
+        </form>
+    </div> -->
+
+    <div class="signup-display">
+        <div class="signup-menu">
+            <nav class="pages">
+                <a onclick="tabs(0)" class="tab button2 active"><span>Interests</span></a>
+                <a onclick="tabs(1)" class="tab button2"><span>Basic Info</span></a>
+                <a onclick="tabs(2)" class="tab button2"><span>Experience</span></a>
+                <a onclick="tabs(3)" class="tab button2"><span>Account</span></a>
+            </nav>
+        </div>
+
+        <div class="main">
+
+            <div class="interests tabShow">
+                <form class="add">
+                    <br>
+                    <input type="text" name="interest1" placeholder="interests">
+                    <input type="text" name="interest2" placeholder="interests">
+                    <input type="text" name="interest3" placeholder="interests">
+                    <input type="text" name="first" placeholder="first name">
+                    <input type="text" name="last" placeholder="last name">
+                    <input type="text" name="location" placeholder="location">
+                    <input type="text" name="username" placeholder="username">
+            
+                    <button>add info</button>
+                </form>
+
+                <h1>Enter you interests</h1>
+                <hr><br>
+                <div class="interestBtns">
+                    <button class="pill" type="button">Interest1</button>
+                    <button class="pill" type="button">Interest2</button>
+                    <button class="pill" type="button">Interest3</button>
+
+                    <input type="text" name="first" placeholder="first name">
+                    <input type="text" name="last" placeholder="last name">
+                    <input type="text" name="location" placeholder="location">
+                    <input type="text" name="username" placeholder="username">
+
+                </div>
+                <br>
+                <button class="button" id="next1">Next</button>
+            </div>
+
+            <div class="basicInfo tabShow">
+
+                <h1>Basic Information</h1>
+                <hr><br>
+                <form class="add">
+                    <div class="name">
+                        <div style="width: 50%;">
+                            <label class="custom-field one" >
+                                <input class="form-input" name="first" type="text" placeholder=" " required/>
+                                <span class="placeholder">First Name</span>
+                            </label>
+                        </div>
+                        
+                        <div style="width: 50%;">
+                            <label class="custom-field one">
+                                <input class="form-input" name="last" type="text" placeholder=" " required/>
+                                <span class="placeholder">Last Name</span>
+                            </label>
+                        </div>  
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"
+                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"/>
+                            <span class="placeholder">Birthday</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" type="number" placeholder=" " style="color-scheme: dark;"/>
+                            <span class="placeholder">Location (Zip Code)</span>
+                        </label>
+                    </div>
+    
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" type="text" placeholder=" " maxlength="200"/>
+                            <span class="placeholder">Summary</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <span class="placeholder">Website/Portfolio</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <span class="placeholder">LinkedIn Profile</span>
+                        </label>
+                    </div>
+                    <br>
+                    <button class="button" type="submit"><span>Next</span></button>
+                </form>
+                
+
+
+            </div>
+
+            <div class="experience tabShow">
+                <h1>Experience</h1>
+                <hr><br>
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="text" placeholder=" "/>
+                        <span class="placeholder">Work</span>
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="text" placeholder=" "/>
+                        <span class="placeholder">Education</span>
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="text" placeholder=" "/>
+                        <span class="placeholder">Skills</span>
+                    </label>
+                </div>
+                <br>
+                <button class="button">Next</button>
+
+                
+            </div>
+
+            <div class="account tabShow">
+                <h1>Create an account</h1>
+                <hr><br>
+            
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="email" placeholder=" " required/>
+                        <span class="placeholder">Email</span>
+                    </label>
+                </div>
+    
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="text" placeholder=" " required/>
+                        <span class="placeholder">Username</span>
+                    </label>
+                </div>
+    
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="password" placeholder=" " required/>
+                        <span class="placeholder">Password</span>
+                    </label>
+                </div>
+    
+                <div class="input">
+                    <label class="custom-field one">
+                        <input class="form-input" type="password" placeholder=" " required/>
+                        <span class="placeholder">Repeat password</span>
+                    </label>
+                </div>
+    
+                <br>
+            
+                <button class="button"><span>Submit</span></button>
+
+                
+    
+            </div>
+            
+            <br>
+    
+            <p>Already have an account? <a href="login.html" style="color: rgb(0, 200, 255);">Log in</a></p>
+
+        </div>
+   
+    <script>
+        document.querySelectorAll(".pill").forEach(pill => {
+            pill.addEventListener('click', () => pill.classList.toggle("pill--selected"));
+        })
+    </script>
+
+    <script>
+        const tabBtn = document.querySelectorAll(".tabs")
+        const tab = document.querySelectorAll(".tabShow")
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            })
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+
+    <script>
+        pages = document.querySelector(".pages").querySelectorAll("a");
+
+        pages.forEach(element => {
+            element.addEventListener('click', function(){
+                pages.forEach(tab => tab.classList.remove("active"))
+
+                this.classList.add("active");
+            })
+        })
+
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
