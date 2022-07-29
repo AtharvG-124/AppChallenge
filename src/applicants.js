@@ -84,7 +84,7 @@ accountContent.addEventListener('submit', (e) => {
     e.preventDefault()
     userdata["email"] = document.getElementById("email").value;
     userdata["username"] = document.getElementById("username").value;
-    userdata["repeatPassword"] = document.getElementById("repeatPassword").value;
+    userdata["repeatPassword"] = document.getElementById("password").value;
 
     addDoc(applicantCol, userdata)
         .then(() => {

@@ -59,7 +59,7 @@
                     <div class="input">
                         <label class="custom-field one">
                             <input class="form-input" id="birthday" type="text" placeholder=" " style="color-scheme: dark;"
-                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required/>
+                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" min="2008-01-01" max="2022-12-31" required/>
                             <span class="placeholder">Birthday</span>
                         </label>
                     </div>
@@ -150,13 +150,6 @@
                         <label class="custom-field one">
                             <input class="form-input" id="password" type="password" placeholder=" " required/>
                             <span class="placeholder">Password</span>
-                        </label>
-                    </div>
-        
-                    <div class="input">
-                        <label class="custom-field one">
-                            <input class="form-input" id="repeatPassword" type="password" placeholder=" " required/>
-                            <span class="placeholder">Repeat password</span>
                         </label>
                     </div>
         
