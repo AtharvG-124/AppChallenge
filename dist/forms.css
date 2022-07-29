@@ -193,7 +193,6 @@ nav{
   
 }
 
-
 .button{
     text-align: center;
     cursor: pointer;
@@ -213,6 +212,9 @@ nav{
     transition-delay: 0.1s;
 
 
+}
+.input input{
+    color-scheme: dark;
 }
 
 .button:before{

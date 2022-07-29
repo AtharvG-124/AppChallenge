@@ -6,82 +6,51 @@
     <link rel="stylesheet" href="forms.css">
     <title>Sign Up</title>
 </head>
+
 <body>
-    <!-- <div>
-        <h2>Enter your interests</h2>
-
-        <form class="add">
-            <input type="text" name="interest1" placeholder="interests">
-            <input type="text" name="interest2" placeholder="interests">
-            <input type="text" name="interest3" placeholder="interests">
-            <input type="text" name="first" placeholder="first name">
-            <input type="text" name="last" placeholder="last name">
-            <input type="text" name="location" placeholder="location">
-            <input type="text" name="username" placeholder="username">
-    
-            <button>add info</button>
-        </form>
-    </div> -->
-
     <div class="signup-display">
         <div class="signup-menu">
             <nav class="pages">
-                <a onclick="tabs(0)" class="tab button2 active"><span>Interests</span></a>
-                <a onclick="tabs(1)" class="tab button2"><span>Basic Info</span></a>
-                <a onclick="tabs(2)" class="tab button2"><span>Experience</span></a>
-                <a onclick="tabs(3)" class="tab button2"><span>Account</span></a>
+                <a onclick="tabs(0)" class="tab button2 active" id="0"><span>Interests</span></a>
+                <a onclick="tabs(1)" class="tab button2" id="1"><span>Basic Info</span></a>
+                <a onclick="tabs(2)" class="tab button2" id="2"><span>Experience</span></a>
+                <a onclick="tabs(3)" class="tab button2" id="3"><span>Account</span></a>
             </nav>
         </div>
 
         <div class="main">
 
             <div class="interests tabShow">
-                <form class="add">
-                    <br>
-                    <input type="text" name="interest1" placeholder="interests">
-                    <input type="text" name="interest2" placeholder="interests">
-                    <input type="text" name="interest3" placeholder="interests">
-                    <input type="text" name="first" placeholder="first name">
-                    <input type="text" name="last" placeholder="last name">
-                    <input type="text" name="location" placeholder="location">
-                    <input type="text" name="username" placeholder="username">
-            
-                    <button>add info</button>
-                </form>
 
                 <h1>Enter you interests</h1>
                 <hr><br>
-                <div class="interestBtns">
-                    <button class="pill" type="button">Interest1</button>
-                    <button class="pill" type="button">Interest2</button>
-                    <button class="pill" type="button">Interest3</button>
 
-                    <input type="text" name="first" placeholder="first name">
-                    <input type="text" name="last" placeholder="last name">
-                    <input type="text" name="location" placeholder="location">
-                    <input type="text" name="username" placeholder="username">
+                <form class="interests">
+                    <div class="interestBtn">
 
-                </div>
-                <br>
-                <button class="button" id="next1">Next</button>
+                    </div>
+                    <br>
+                    <button class="button" onclick="nextClicked()">Next</button>
+
+                </form>
             </div>
 
             <div class="basicInfo tabShow">
 
                 <h1>Basic Information</h1>
                 <hr><br>
-                <form class="add">
+                <form class="basicInfo" id="basicInfo">
                     <div class="name">
                         <div style="width: 50%;">
                             <label class="custom-field one" >
-                                <input class="form-input" name="first" type="text" placeholder=" " required/>
+                                <input class="form-input" id="first" type="text" placeholder=" " style="color-scheme: dark;" required/>
                                 <span class="placeholder">First Name</span>
                             </label>
                         </div>
                         
                         <div style="width: 50%;">
                             <label class="custom-field one">
-                                <input class="form-input" name="last" type="text" placeholder=" " required/>
+                                <input class="form-input" id="last" type="text" placeholder=" " style="color-scheme: dark;" required/>
                                 <span class="placeholder">Last Name</span>
                             </label>
                         </div>  
@@ -89,114 +58,112 @@
     
                     <div class="input">
                         <label class="custom-field one">
-                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"
-                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'"/>
+                            <input class="form-input" id="birthday" type="text" placeholder=" " style="color-scheme: dark;"
+                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required/>
                             <span class="placeholder">Birthday</span>
                         </label>
                     </div>
-    
+
                     <div class="input">
                         <label class="custom-field one">
-                            <input class="form-input" type="number" placeholder=" " style="color-scheme: dark;"/>
-                            <span class="placeholder">Location (Zip Code)</span>
-                        </label>
-                    </div>
-    
-    
-                    <div class="input">
-                        <label class="custom-field one">
-                            <input class="form-input" type="text" placeholder=" " maxlength="200"/>
+                            <input class="form-input" id="summary" type="text" placeholder=" " maxlength="200" required/>
                             <span class="placeholder">Summary</span>
                         </label>
                     </div>
     
                     <div class="input">
                         <label class="custom-field one">
-                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <input class="form-input" id="location" type="number" placeholder=" " style="color-scheme: dark;" required/>
+                            <span class="placeholder">Location (Zip Code)</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="website" type="text" placeholder=" " style="color-scheme: dark;"/>
                             <span class="placeholder">Website/Portfolio</span>
                         </label>
                     </div>
     
                     <div class="input">
                         <label class="custom-field one">
-                            <input class="form-input" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <input class="form-input" id="linkedInProfile" type="text" placeholder=" " style="color-scheme: dark;"/>
                             <span class="placeholder">LinkedIn Profile</span>
                         </label>
                     </div>
                     <br>
-                    <button class="button" type="submit"><span>Next</span></button>
-                </form>
-                
+                    <button class="button">Next</button>
 
+                </form>
 
             </div>
 
             <div class="experience tabShow">
                 <h1>Experience</h1>
                 <hr><br>
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="text" placeholder=" "/>
-                        <span class="placeholder">Work</span>
-                    </label>
-                </div>
-
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="text" placeholder=" "/>
-                        <span class="placeholder">Education</span>
-                    </label>
-                </div>
-
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="text" placeholder=" "/>
-                        <span class="placeholder">Skills</span>
-                    </label>
-                </div>
-                <br>
-                <button class="button">Next</button>
-
+                <form class="experienceContent">
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="work" type="text" placeholder=" "/>
+                            <span class="placeholder">Work</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="education" type="text" placeholder=" "/>
+                            <span class="placeholder">Education</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="skills" type="text" placeholder=" "/>
+                            <span class="placeholder">Skills</span>
+                        </label>
+                    </div>
+                    <br>
+                    <button class="button" onclick="nextClicked()">Next</button>
+                </form>
                 
             </div>
 
             <div class="account tabShow">
                 <h1>Create an account</h1>
                 <hr><br>
-            
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="email" placeholder=" " required/>
-                        <span class="placeholder">Email</span>
-                    </label>
-                </div>
-    
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="text" placeholder=" " required/>
-                        <span class="placeholder">Username</span>
-                    </label>
-                </div>
-    
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="password" placeholder=" " required/>
-                        <span class="placeholder">Password</span>
-                    </label>
-                </div>
-    
-                <div class="input">
-                    <label class="custom-field one">
-                        <input class="form-input" type="password" placeholder=" " required/>
-                        <span class="placeholder">Repeat password</span>
-                    </label>
-                </div>
-    
-                <br>
-            
-                <button class="button"><span>Submit</span></button>
-
+                <form class="accountContent">
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="email" type="email" placeholder=" " required/>
+                            <span class="placeholder">Email</span>
+                        </label>
+                    </div>
+        
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="username" type="text" placeholder=" " required/>
+                            <span class="placeholder">Username</span>
+                        </label>
+                    </div>
+        
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="password" type="password" placeholder=" " required/>
+                            <span class="placeholder">Password</span>
+                        </label>
+                    </div>
+        
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="repeatPassword" type="password" placeholder=" " required/>
+                            <span class="placeholder">Repeat password</span>
+                        </label>
+                    </div>
+        
+                    <br>
                 
+                    <button class="button"><span>Submit</span></button>
+                </form>
     
             </div>
             
@@ -207,6 +174,22 @@
         </div>
    
     <script>
+        let interestBtnClass = document.querySelector(".interestBtn")
+        let interests = ["Finance", "Research", "Technician", "Mechanic", "Volunteer", "Consultant", "Science", "Marketing", "Production", "Software Engineering",
+        "Game Design", "Babysitter", "Web Developer", "Petsitter", "Back-End Developer", "Tester", "Driver", "Non-Profits", "Computers Architecture", "Trainer",  "Business Analyst", "Fitness", "Cooking", "Installer", "Blogging", 
+        "Journalism", "Dance", "Singing", "Musician", "Fashion", "Manager", "Painting", "Designer", "Promotional Writing", "Animation", "Drawing", "Therapist", 
+        "Photography", "Video Editor", "Photo Editor", "Audio Designer", "Data Analyst"]
+
+        for (let i = 0; i < interests.length; i++){
+            const btn = document.createElement('button')
+            btn.innerHTML = interests[i]
+            btn.classList.add("pill")
+            btn.type = "button"
+            interestBtnClass.append(btn)
+        }
+    </script>
+
+    <script>
         document.querySelectorAll(".pill").forEach(pill => {
             pill.addEventListener('click', () => pill.classList.toggle("pill--selected"));
         })
@@ -215,6 +198,9 @@
     <script>
         const tabBtn = document.querySelectorAll(".tabs")
         const tab = document.querySelectorAll(".tabShow")
+        let pages = document.querySelector(".pages").querySelectorAll("a")
+
+        let count = 0
 
         function tabs(panelIndex) {
             tab.forEach(function(node) {
@@ -223,20 +209,34 @@
             tab[panelIndex].style.display = "block";
         }
         tabs(0);
-    </script>
 
-    <script>
-        pages = document.querySelector(".pages").querySelectorAll("a");
+
+        function nextClicked(){
+            count += 1;
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            })
+            tab[count].style.display = "block";
+
+            pages.forEach(tab => tab.classList.remove("active"))
+            pages[count].classList.add("active")
+
+            if (count > 3){
+                count = 0;
+            }
+        }
 
         pages.forEach(element => {
             element.addEventListener('click', function(){
                 pages.forEach(tab => tab.classList.remove("active"))
 
                 this.classList.add("active");
+                count = parseInt(this.id)
             })
         })
-
     </script>
+
+
     <script src="bundle.js"></script>
 </body>
 </html>
