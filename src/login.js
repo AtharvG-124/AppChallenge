@@ -32,18 +32,19 @@ loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const email = loginForm.email.value
   const password = loginForm.password.value
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log('user created', user)
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
-const user = auth.currentUser;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log('user created', user)
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+  const user = auth.currentUser;
+});
 
 if (user !== null) {
   user.providerData.forEach((profile) => {
