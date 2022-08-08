@@ -3,6 +3,9 @@ import {
     getFirestore, collection, getDocs,
     addDoc
 } from 'firebase/firestore'
+import {
+    getAuth, createUserWithEmailAndPassword
+} from 'firebase/auth'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAdWCJxEHmQQCVmWfXMTHD_NjrlAOKkpCA",
@@ -20,6 +23,7 @@ initializeApp(firebaseConfig)
 
 // Initialize Services
 const db = getFirestore()
+const auth = getAuth()
 
 // Collection Ref
 const applicantCol = collection(db, 'Job Applicants')
@@ -83,12 +87,20 @@ experienceContent.addEventListener('submit', (e) => {
 accountContent.addEventListener('submit', (e) => {
     e.preventDefault()
     userdata["email"] = document.getElementById("email").value;
-    userdata["username"] = document.getElementById("username").value;
-    userdata["repeatPassword"] = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((cred) => {
+            console.log('user created', cred.user)
+        })
 
     addDoc(applicantCol, userdata)
         .then(() => {
             console.log("adding done")
+        })
+        .catch((err) => {
+            console.log(err)
         })
 })
 
