@@ -1,11 +1,13 @@
 import { initializeApp } from "firebase/app"
 import {
     getFirestore, collection, getDocs,
-    addDoc
+    addDoc,
+    doc
 } from 'firebase/firestore'
 import {
   getAuth,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -26,6 +28,17 @@ initializeApp(firebaseConfig)
 const db = getFirestore()
 const auth =  getAuth()
 
+const logoutButton = document.queryselector('.logout')
+logoutButton.addEventListener('click', () => {
+  signOut(auth)
+    .then(() => {
+      console.log("user is logged out")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+
+})
 
 const loginForm = document.queryselector('.login')
 loginForm.addEventListener('submit', (e) => {
