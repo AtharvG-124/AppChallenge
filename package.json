@@ -1,0 +1,28 @@
+{
+  "name": "appchallenge",
+  "version": "1.0.0",
+  "description": "##### A website where small businesses and people that are looking for work experience can meet and chat. We did this because other websites don't have this feature and on larger job listing websites, there is a lower chance of small businesses to stand out. Our website allows start-ups to grow.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtharvG-124/AppChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtharvG-124/AppChallenge/issues"
+  },
+  "homepage": "https://github.com/AtharvG-124/AppChallenge#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "firebase": "^9.9.1"
+  }
+}
