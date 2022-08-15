@@ -1,0 +1,82 @@
+.sidebar{
+    display: flex;
+    flex: 0.35;
+    padding-top: 5px;
+    flex-direction: column;
+}
+
+.sidebar__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-right: 1px solid #5c5c5c;
+
+}
+
+.sidebar__headerRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 10vw;
+}
+
+.button{
+    height: 48px;
+    width: 48px;
+    color: gray;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+
+}
+
+.acc{
+    padding-left: 15px;
+    padding-top: 8px;
+    color: rgb(255, 255, 255);
+}
+
+.button:hover{
+    background: rgba(191, 191, 191, 0.1);
+}
+
+.sidebar__search{
+    display: flex;
+    align-items: center;
+    background-color: #5c5c5c;
+    height: 39px;
+    padding: 10px;
+}
+
+.sidebar__searchContainer{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+.sidebar__searchContainer > .MdSearch {
+    padding: 10px;
+    color: gray;
+}
+.sidebar__searchContainer > input {
+    border: none;
+    height: 30px;
+    width: 85%;
+    outline: none;
+    overflow: scroll;
+    text-overflow: ellipsis;
+
+}
+
+.sidebar__chats{
+    flex:1;
+    background-color: #3b3b3b;
+    overflow: scroll;
+}
