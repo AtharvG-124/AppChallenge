@@ -3,17 +3,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/forms.css">
     <title>Login</title>
 </head>
 <body>
-    <form class="login">
-        <label for="email">email:</label>
-        <input type="email" nam="email">
-        <label for="password">password:</label>
-        <input type="password" name="password">
-        <button>login</button>
-    </form>
+    <div class="signup-display">
+        <div class="main" style="margin-top: 30px;">
+            <div class="account tabShow">
+                <h1>Log In</h1>
+                <hr><br>
+                <form class="accountContent">
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="email" type="email" placeholder=" " required/>
+                            <span class="placeholder">Email</span>
+                        </label>
+                    </div>
+        
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="password" type="password" placeholder=" " required/>
+                            <span class="placeholder">Password</span>
+                        </label>
+                    </div>
+        
+                    <br>
+                
+                    <a href="../../home.html" style="text-decoration: none;"><button class="button"><span>Log In</span></button></a>
+                </form>
 
-    <button class="logout">logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/dist/bundles/login.bundle.js"></script>
 </body>
 </html>

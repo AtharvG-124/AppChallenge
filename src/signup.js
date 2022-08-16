@@ -4,7 +4,7 @@ import {
     addDoc
 } from 'firebase/firestore'
 import {
-    getAuth, createUserWithEmailAndPassword
+    getAuth, createUserWithEmailAndPassword, signOut
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -102,6 +102,9 @@ accountContent.addEventListener('submit', (e) => {
         .catch((err) => {
             console.log(err)
         })
+
+    signOut(auth)
+    accountContent.reset()
 })
 
 const basicInfo = document.getElementById("basicInfo")
