@@ -1,29 +1,11 @@
-import { initializeApp } from "firebase/app"
 import {
-    getFirestore, collection, getDocs,
+    collection, getDocs,
     addDoc
 } from 'firebase/firestore'
 import {
-    getAuth, createUserWithEmailAndPassword, signOut
+    createUserWithEmailAndPassword, signOut
 } from 'firebase/auth'
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAdWCJxEHmQQCVmWfXMTHD_NjrlAOKkpCA",
-    authDomain: "fir-testing2-aafd5.firebaseapp.com",
-    databaseURL: "https://fir-testing2-aafd5-default-rtdb.firebaseio.com",
-    projectId: "fir-testing2-aafd5",
-    storageBucket: "fir-testing2-aafd5.appspot.com",
-    messagingSenderId: "886071641020",
-    appId: "1:886071641020:web:f57ebc362c6968027e21b9",
-    measurementId: "G-4NFJ0QQBGL"
-}
-
-// Initialize Firebase App
-initializeApp(firebaseConfig)
-
-// Initialize Services
-const db = getFirestore()
-const auth = getAuth()
+import {db, auth, firebaseConfig} from "../dist/firebase.js"
 
 // Collection Ref
 const applicantCol = collection(db, 'Job Applicants')
@@ -58,7 +40,7 @@ addInterests.addEventListener('submit', (e) => {
     for (let i = 0; i < selectedInterests.length; i++){
         interests.push(selectedInterests[i].innerHTML)
     }
-    
+
     if (interests.length === 0){
         alert("We recommend that you choose interests so we can deliver jobs that you prefer.")
     }
@@ -89,12 +71,7 @@ accountContent.addEventListener('submit', (e) => {
     userdata["email"] = document.getElementById("email").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((cred) => {
-            console.log('user created', cred.user)
-        })
-
+        
     addDoc(applicantCol, userdata)
         .then(() => {
             console.log("adding done")
@@ -103,8 +80,12 @@ accountContent.addEventListener('submit', (e) => {
             console.log(err)
         })
 
-    signOut(auth)
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(
+            location.href = "../../home.html"
+        )
     accountContent.reset()
+    
 })
 
 const basicInfo = document.getElementById("basicInfo")

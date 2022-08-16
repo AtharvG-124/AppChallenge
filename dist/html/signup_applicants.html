@@ -12,14 +12,30 @@
     <div class="signup-display">
         <div class="signup-menu">
             <nav class="pages">
-                <a onclick="tabs(0)" class="tab button2 active" id="0"><span>Interests</span></a>
-                <a onclick="tabs(1)" class="tab button2" id="1"><span>Basic Info</span></a>
-                <a onclick="tabs(2)" class="tab button2" id="2"><span>Experience</span></a>
-                <a onclick="tabs(3)" class="tab button2" id="3"><span>Account</span></a>
+                <a onclick="tabs(0)" class="tab button2 active" id="0"><span>Signup Type</span></a>
+                <a onclick="tabs(1)" class="tab button2" id="1"><span>Interests</span></a>
+                <a onclick="tabs(2)" class="tab button2" id="2"><span>Basic Info</span></a>
+                <a onclick="tabs(3)" class="tab button2" id="3"><span>Experience</span></a>
+                <a onclick="tabs(4)" class="tab button2" id="4"><span>Account</span></a>
             </nav>
         </div>
 
         <div class="main">
+
+            <div class="type tabShow">
+                <h1>Select Account Type</h1>
+                <hr><br>
+                <form class="typeContent" style="display: flex; gap: 15px; margin-left: -10px;">
+                    <div style="width: 50%;">
+                        <button class="pill" type="button" onclick="nextClicked()" style="height: 250px; width: 100%; flex: 1; font-size: 30px; border-radius: 20px;">Job Applicant</button>
+                    </div>
+                    <div style="width: 50%;">
+                        <a href="signup_business.html"><button class="pill" type="button" style="height: 250px; width: 100%; flex: 1; font-size: 30px; border-radius: 20px;">Business</button></a>
+                    </div>
+        
+                </form>
+    
+            </div>
 
             <div class="interests tabShow">
 
@@ -60,7 +76,7 @@
                     <div class="input">
                         <label class="custom-field one">
                             <input class="form-input" id="birthday" type="text" placeholder=" " style="color-scheme: dark;"
-                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" min="2008-01-01" max="2022-12-31" required/>
+                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" min="1990-01-01" max="2022-12-31" required/>
                             <span class="placeholder">Birthday</span>
                         </label>
                     </div>
@@ -149,7 +165,7 @@
         
                     <br>
                 
-                    <a href="login.html" style="text-decoration: none;"><button class="button"><span>Submit</span></button></a>
+                    <a href="login.html" style="text-decoration: none;"><button class="button" onclick="location.href = '../../home.html';"><span>Submit</span></button></a>
                 </form>
     
             </div>
@@ -197,7 +213,6 @@
         }
         tabs(0);
 
-
         function nextClicked(){
             count += 1;
             tab.forEach(function(node) {
@@ -208,7 +223,7 @@
             pages.forEach(tab => tab.classList.remove("active"))
             pages[count].classList.add("active")
 
-            if (count > 3){
+            if (count > 4){
                 count = 0;
             }
         }
