@@ -3,9 +3,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup - Small Business</title>
+    <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
+    <div class="signup-display">
+        <div class="signup-menu">
+            <nav class="pages">
+                <a onclick="tabs(0)" class="tab button2 active" id="0"><span>Basic Info</span></a>
+                <a onclick="tabs(1)" class="tab button2" id="1"><span>Account</span></a>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="basicInfo tabShow">
+
+                <h1>Basic Information</h1>
+                <hr><br>
+                <form class="basicInfo" id="basicInfo">
+                    <div>
+                        <label class="custom-field one" >
+                            <input class="form-input" id="businessName" type="text" placeholder=" " style="color-scheme: dark;" required/>
+                            <span class="placeholder">Business Name</span>
+                        </label>
+                    </div>
     
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="establishDay" type="text" placeholder=" " style="color-scheme: dark;"
+                            onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required/>
+                            <span class="placeholder">Establish Date</span>
+                        </label>
+                    </div>
+
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="summary" type="text" placeholder=" " maxlength="300" required/>
+                            <span class="placeholder">Summary</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="location" type="number" placeholder=" " style="color-scheme: dark;" required/>
+                            <span class="placeholder">Location (Zip Code)</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="website" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <span class="placeholder">Website</span>
+                        </label>
+                    </div>
+    
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="linkedInProfile" type="text" placeholder=" " style="color-scheme: dark;"/>
+                            <span class="placeholder">LinkedIn Profile</span>
+                        </label>
+                    </div>
+                    <br>
+                    <button class="button">Next</button>
+
+                </form>
+
+            </div>
+
+            <div class="account tabShow">
+                <h1>Create an account</h1>
+                <hr><br>
+                <form class="accountContent">
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="email" type="email" placeholder=" " required/>
+                            <span class="placeholder">Email</span>
+                        </label>
+                    </div>
+        
+                    <div class="input">
+                        <label class="custom-field one">
+                            <input class="form-input" id="password" type="password" placeholder=" " required/>
+                            <span class="placeholder">Password</span>
+                        </label>
+                    </div>
+        
+                    <br>
+                
+                    <a href="login.html" style="text-decoration: none;"><button class="button" onclick="location.href = '../../home.html';"><span>Submit</span></button></a>
+                </form>
+    
+            </div>
+        </div>
+
+        <script>
+            const tabBtn = document.querySelectorAll(".tabs")
+            const tab = document.querySelectorAll(".tabShow")
+            let pages = document.querySelector(".pages").querySelectorAll("a")
+    
+            let count = 0
+    
+            function tabs(panelIndex) {
+                tab.forEach(function(node) {
+                    node.style.display = "none";
+                })
+                tab[panelIndex].style.display = "block";
+            }
+            tabs(0);
+    
+            function nextClicked(){
+                count += 1;
+                tab.forEach(function(node) {
+                    node.style.display = "none";
+                })
+                tab[count].style.display = "block";
+    
+                pages.forEach(tab => tab.classList.remove("active"))
+                pages[count].classList.add("active")
+    
+                if (count > 4){
+                    count = 0;
+                }
+            }
+    
+            pages.forEach(element => {
+                element.addEventListener('click', function(){
+                    pages.forEach(tab => tab.classList.remove("active"))
+    
+                    this.classList.add("active");
+                    count = parseInt(this.id)
+                })
+            })
+        </script>
+    <script src="../bundles/signup_business.bundle.js"></script>
 </body>
 </html>

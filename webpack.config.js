@@ -4,6 +4,7 @@ module.exports = {
     mode: 'development',
     entry: {
         signup: './src/signup.js',
+        signup_business: './src/signup_business.js',
         login: './src/login.js'
     },
     output: {
